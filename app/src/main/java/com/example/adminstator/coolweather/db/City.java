@@ -23,7 +23,7 @@ public class City extends DataSupport {
         this.id = id;
     }
 
-    public String getCityName(String cityName){
+    public String getCityName(){
         return cityName;
     }
 
