@@ -1,5 +1,6 @@
 package com.example.adminstator.coolweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.gesture.GestureLibraries;
 import android.graphics.Color;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.adminstator.coolweather.gson.Forecast;
 import com.example.adminstator.coolweather.gson.Weather;
+import com.example.adminstator.coolweather.service.AutoUpdateService;
 import com.example.adminstator.coolweather.util.HttpUtil;
 import com.example.adminstator.coolweather.util.Utility;
 
@@ -213,6 +215,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startActivity(intent);
     }
 
 }
